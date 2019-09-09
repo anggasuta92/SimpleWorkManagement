@@ -12,5 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('init');
+})->name('index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/phonebook', 'PhonebookController@index')->name('phonebook');
+Route::get('/phonebook/{id}', 'PhonebookController@edit')->name('phonebook.edit');
